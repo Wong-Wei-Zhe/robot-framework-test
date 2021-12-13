@@ -1,7 +1,7 @@
 *** Settings ***
 
 Library  SeleniumLibrary
-Resource    loginres.robot
+Resource  loginres.robot
 
 *** Variable ***
 
@@ -11,6 +11,4 @@ Resource    loginres.robot
 
 Open Deriv
     Login  ${my_email}  ${my_pw}
-
-
-#    Close Browser]
+#    Close Browser

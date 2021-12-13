@@ -1,29 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.8.10 on linux)" generated="20211213 03:52:23.774" rpa="false" schemaversion="2">
-<suite id="s1" name="Logintest" source="/home/wong/Besquare/QualityAssurance/robot-framework-test/automation_project/logintest.robot">
-<test id="s1-t1" name="Open Deriv">
-<kw name="Login" library="loginres">
+<robot generator="Robot 4.1.2 (Python 3.8.10 on linux)" generated="20211213 08:36:41.854" rpa="false" schemaversion="2">
+<suite id="s1" name="Task2" source="/home/wong/Besquare/QualityAssurance/robot-framework-test/automation_project/project_solutions/task2.robot">
+<test id="s1-t1" name="Open App Deriv">
+<kw name="Login" library="common">
 <arg>${my_email}</arg>
 <arg>${my_pw}</arg>
-<msg timestamp="20211213 03:52:23.860" level="FAIL">Variable '${my_email}' not found.</msg>
-<status status="FAIL" starttime="20211213 03:52:23.859" endtime="20211213 03:52:23.860"/>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=https://app.deriv.com/</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211213 08:36:41.939" level="INFO">Opening browser 'chrome' to base url 'https://app.deriv.com/'.</msg>
+<status status="PASS" starttime="20211213 08:36:41.938" endtime="20211213 08:36:55.229"/>
 </kw>
-<status status="FAIL" starttime="20211213 03:52:23.859" endtime="20211213 03:52:23.860">Variable '${my_email}' not found.</status>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>1280</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20211213 08:36:55.230" endtime="20211213 08:36:55.381"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>dt_core_header_acc-info-preloader</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" starttime="20211213 08:36:55.381" endtime="20211213 08:36:55.414"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${login_btn}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211213 08:36:55.414" endtime="20211213 08:36:55.430"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211213 08:36:55.430" level="INFO">Clicking element 'dt_login_button'.</msg>
+<status status="PASS" starttime="20211213 08:36:55.430" endtime="20211213 08:36:55.532"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${email_field}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211213 08:36:55.532" endtime="20211213 08:36:58.854"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${email_field}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211213 08:36:58.855" level="INFO">Typing text 'wong+1@besquare.com.my' into text field 'name=email'.</msg>
+<status status="PASS" starttime="20211213 08:36:58.854" endtime="20211213 08:36:58.904"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_field}</arg>
+<arg>${pw}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211213 08:36:58.904" level="INFO">Typing text 'KenTrade123' into text field '//*[@type="password"]'.</msg>
+<status status="PASS" starttime="20211213 08:36:58.904" endtime="20211213 08:36:58.953"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_oauth_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211213 08:36:58.953" level="INFO">Clicking element '//*[text()="Log in"]'.</msg>
+<status status="PASS" starttime="20211213 08:36:58.953" endtime="20211213 08:37:02.617"/>
+</kw>
+<status status="PASS" starttime="20211213 08:36:41.938" endtime="20211213 08:37:02.617"/>
+</kw>
+<status status="PASS" starttime="20211213 08:36:41.938" endtime="20211213 08:37:02.617"/>
 </test>
-<status status="FAIL" starttime="20211213 03:52:23.775" endtime="20211213 03:52:23.860"/>
+<test id="s1-t2" name="Navigate to Volatility 10 (1s) index">
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>chart-container__loader</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" starttime="20211213 08:37:02.618" endtime="20211213 08:37:02.636"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>class:ciq-menu.ciq-enabled.cq-chart-title.stx-show.cq-symbols-display</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211213 08:37:02.636" endtime="20211213 08:37:06.957"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>class:sc-dialog.cq-menu-dropdown</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211213 08:37:06.957" endtime="20211213 08:37:07.386"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${market_type_dropdown}</arg>
+<arg>25</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211213 08:37:07.386" endtime="20211213 08:37:07.415"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${market_type_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211213 08:37:07.415" level="INFO">Clicking element 'class:cq-symbol-select-btn'.</msg>
+<status status="PASS" starttime="20211213 08:37:07.415" endtime="20211213 08:37:07.478"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${dropdown_market_box}</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211213 08:37:07.479" endtime="20211213 08:37:07.916"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${dropdown_market_box_searchbox}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211213 08:37:07.916" endtime="20211213 08:37:07.925"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${dropdown_market_box_searchbox}</arg>
+<arg>Volatility 10 (1s) index</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211213 08:37:07.925" level="INFO">Typing text 'Volatility 10 (1s) index' into text field '//*[@type="text"]'.</msg>
+<status status="PASS" starttime="20211213 08:37:07.925" endtime="20211213 08:37:08.056"/>
+</kw>
+<status status="PASS" starttime="20211213 08:37:02.618" endtime="20211213 08:37:08.057"/>
+</test>
+<test id="s1-t3" name="End Test">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211213 08:37:08.058" endtime="20211213 08:37:08.158"/>
+</kw>
+<status status="PASS" starttime="20211213 08:37:08.057" endtime="20211213 08:37:08.158"/>
+</test>
+<status status="PASS" starttime="20211213 08:36:41.855" endtime="20211213 08:37:08.159"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Logintest">Logintest</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="Task2">Task2</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20211213 03:52:23.774" level="ERROR">Variable file 'my_email' does not exist.</msg>
-<msg timestamp="20211213 03:52:23.775" level="ERROR">Variable file 'my_pw' does not exist.</msg>
 </errors>
 </robot>
