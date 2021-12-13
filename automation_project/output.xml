@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.8.10 on linux)" generated="20211213 03:52:23.774" rpa="false" schemaversion="2">
+<suite id="s1" name="Logintest" source="/home/wong/Besquare/QualityAssurance/robot-framework-test/automation_project/logintest.robot">
+<test id="s1-t1" name="Open Deriv">
+<kw name="Login" library="loginres">
+<arg>${my_email}</arg>
+<arg>${my_pw}</arg>
+<msg timestamp="20211213 03:52:23.860" level="FAIL">Variable '${my_email}' not found.</msg>
+<status status="FAIL" starttime="20211213 03:52:23.859" endtime="20211213 03:52:23.860"/>
+</kw>
+<status status="FAIL" starttime="20211213 03:52:23.859" endtime="20211213 03:52:23.860">Variable '${my_email}' not found.</status>
+</test>
+<status status="FAIL" starttime="20211213 03:52:23.775" endtime="20211213 03:52:23.860"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Logintest">Logintest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20211213 03:52:23.774" level="ERROR">Variable file 'my_email' does not exist.</msg>
+<msg timestamp="20211213 03:52:23.775" level="ERROR">Variable file 'my_pw' does not exist.</msg>
+</errors>
+</robot>
