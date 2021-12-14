@@ -19,7 +19,9 @@ Loading Wait
     #wait until page contains element  class:sc-dialog.cq-menu-dropdown  60
     wait until page contains element  //div[@class="chartContainer"]
     wait until page contains element  ${market_type_dropdown}  60
-    sleep  8  #WILL FAIL IF WEBSITE TAKES TOO LONG TO LOAD CHART
+    wait until page does not contain element  //*[text()="Loading interface..."]
+    wait until page does not contain element  //div[@class="btn-purchase__shadow-wrapper btn-purchase__shadow-wrapper--disabled"]
+    sleep  1  #WILL FAIL IF WEBSITE TAKES TOO LONG TO LOAD CHART
     #set browser implicit wait  10
 
 Underlying Switch
