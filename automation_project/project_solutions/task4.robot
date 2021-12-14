@@ -4,6 +4,8 @@ Library  SeleniumLibrary
 Resource  common/common.robot
 
 *** Variable ***
+
+${url}  https://app.deriv.com/
 # REFERENCE //*[@class="cq-symbol-info"]/child::div[text()="Volatility 10 (1s) Index"]
 ${market_type_dropdown}  //*[@class="cq-symbol-select-btn"]
 ${dropdown_market_box}  class:sc-dialog.cq-menu-dropdown.cq-menu-dropdown-enter-done
@@ -25,7 +27,7 @@ Loading Wait
     wait until page contains element  ${market_type_dropdown}  60
     wait until page does not contain element  //*[text()="Loading interface..."]
     wait until page does not contain element  //div[@class="btn-purchase__shadow-wrapper btn-purchase__shadow-wrapper--disabled"]
-    sleep  1  #WILL FAIL IF WEBSITE TAKES TOO LONG TO LOAD CHART
+    sleep  5  #WILL FAIL IF WEBSITE TAKES TOO LONG TO LOAD CHART
     #set browser implicit wait  10
 
 Underlying Switch
@@ -54,7 +56,7 @@ Purchase Contract Type
 *** Test Cases ***
 
 Open App Deriv
-    Login  ${my_email}  ${my_pw}
+    Login  ${my_email}  ${my_pw}  ${url}
 
 Switch to Demo Account
     Switch to Demo Account

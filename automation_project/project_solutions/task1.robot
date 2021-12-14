@@ -5,6 +5,8 @@ Resource  common/common.robot
 
 *** Variable ***
 
+${url}  https://app.deriv.com/
+
 ${account_type_loader}  dt_core_header_acc-info-preloader
 ${account_type_dropdown}  dt_core_account-info_acc-info
 ${real_acc_tab}  real_account_tab
@@ -26,7 +28,7 @@ Loading Wait
 *** Test Cases ***
 
 Open App Deriv
-    Login  ${my_email}  ${my_pw}
+    Login  ${my_email}  ${my_pw}  ${url}
 
 Real Account Landing
     Loading Wait
